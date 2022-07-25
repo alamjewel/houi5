@@ -1,0 +1,55 @@
+<mvc:View controllerName="sct.training.jhoui5.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <f:SimpleForm id="SimpleFormChange354"
+                editable="true"
+                layout="ResponsiveGridLayout"
+                title="Address"
+                labelSpanXL="3"
+                labelSpanL="3"
+                labelSpanM="3"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="4"
+                emptySpanL="4"
+                emptySpanM="4"
+                emptySpanS="0"
+                columnsXL="1"
+                columnsL="1"
+                columnsM="1"
+                singleContainerFullSize="false" >
+                <f:content>
+                    <Label id="app_label_customerid" text="{i18n>app.customer.id}" labelFor="app_text_customerid"/>
+                    <Input id="app_text_customerid" value="1000001" />
+                    <Label id="app_label_first_name" text="{i18n>firstName}" labelFor="app_text_first_name"/>
+                    <Input id="app_text_first_name" value="Md. Ashraful" />
+                    <Label id="app_label_last_name" text="{i18n>lastName}" labelFor="app_text_last_name"/>
+                    <Input id="app_text_last_name" value="Alam" />
+                    <Label id="app_label_title" text="{i18n>title}" labelFor="app_text_title"/>
+                    <Input id="app_text_title" value="Dr." />
+                    <Label id="app_label_gender" text="{i18n>gender}" labelFor="app_select_gender"/>
+                    <Select id="app_select_gender" selectedKey="female">
+                        <items>
+                            <core:Item id="app_item_female" key="female" text="{i18n>female}"/>
+                            <core:Item id="app_item_male" key="male" text="{i18n>male}"/>
+                        </items>
+                    </Select>
+                    <Label id="app_label_phone" text="{i18n>phone}" labelFor="app_text_phone"/>
+                    <Input id="app_text_phone" value="+123456789" />
+                    <Label id="app_label_website" text="{i18n>website}" labelFor="app_text_website"/>
+                    <Input id="app_text_website" value="www.abc.com" />
+                </f:content>
+            </f:SimpleForm>
+            <!--
+            <HBox id="app_hbox_customerid">
+                <items>
+                    <Label id="app_label_customerid" text="CustomerId" labelFor="app_text_customerid"/>
+                    <Text id="app_text_customerid" text="1000001" />
+                </items>
+            </HBox>
+            -->
+        </content>
+    </Page>
+</mvc:View>
