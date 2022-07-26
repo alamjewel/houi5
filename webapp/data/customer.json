@@ -1,0 +1,34 @@
+{
+    "customers": [
+        {
+            "customerID": "100001",
+            "firstName": "Md. Ashraful",
+            "lastName": "Alam",
+            "title": "Dr.",
+            "gender": "female",
+            "phone": "+123456789",
+            "email": "abc@abc.com",
+            "website": "www.abc.com"
+        },
+        {
+            "customerID": "100002",
+            "firstName": "Md. Ashraful",
+            "lastName": "Alam",
+            "title": "Dr.",
+            "gender": "female",
+            "phone": "+123456789",
+            "email": "abc@abc.com",
+            "website": "www.abc.com"
+        },
+        {
+            "customerID": "100003",
+            "firstName": "Md. Ashraful",
+            "lastName": "Alam",
+            "title": "Dr.",
+            "gender": "female",
+            "phone": "+123456789",
+            "email": "abc@abc.com",
+            "website": "www.abc.com"
+        }
+    ]
+}

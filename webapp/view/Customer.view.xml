@@ -1,0 +1,50 @@
+<mvc:View controllerName="sct.training.jhoui5.controller.Customer"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+    <Page id="customerPage" title="{i18n>title}">
+        <content>
+            <Table id="customerList" items="{/customers}" noDataText="Sorry! There is no data, right now!">
+                <columns>
+                    <Column id="customerID">
+                        <Text id="customerIdText" text="{i18n>app.customer.id}" />
+                    </Column>
+                    <Column id="customerFirstName">
+                        <Text id="customerFirstNameTxt" text="{i18n>firstName}" />
+                    </Column>
+                    <Column id="customerLastName">
+                        <Text id="Text" text="{i18n>lastName}" />
+                    </Column>
+                    <Column id="customerTitle">
+                        <Text id="customerTitleText" text="{i18n>title}" />
+                    </Column>
+                    <Column id="customerGender">
+                        <Text id="customerGenderText" text="{i18n>gender}" />
+                    </Column>
+                    <Column id="customerEmail">
+                        <Text id="customerEmailText" text="{i18n>email}" />
+                    </Column>
+                    <Column id="customerPhone" minScreenWidth="Mobile">
+                        <Text id="customerPhoneText" text="{i18n>phone}" />
+                    </Column>
+                    <Column id="customerWebsite" minScreenWidth="Tablet">
+                        <Text id="customerWebsiteText" text="{i18n>website}" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="customerData">
+                        <cells>
+                            <Text id="customerIdValue" text="{customerID}"/>
+                            <Text id="customerFirstNameValue" text="{firstName}"/>
+                            <Text id="customerLastNameValue" text="{lastName}"/>
+                            <Text id="customerTitleValue" text="{title}"/>
+                            <Text id="customerGenderValue" text="{gender}"/>
+                            <Text id="customerEmailValue" text="{email}"/>
+                            <Text id="customerPhoneValue" text="{phone}"/>
+                            <Text id="customerWebsiteValue" text="{website}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

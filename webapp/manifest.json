@@ -69,11 +69,19 @@
           "bundleName": "sct.training.jhoui5.i18n.i18n"
         }
       },
-      "": {
+      "test": {
         "dataSource": "mainService",
         "preload": true,
         "settings": {}
-      }
+      },
+      "": {
+          "type": "sap.ui.model.json.JSONModel",
+          "uri": "data/customer.json"
+      },
+      "genderModel": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "data/genders.json"
+    }
     },
     "resources": {
       "css": [
@@ -95,9 +103,9 @@
       "routes": [
         {
           "name": "RouteMain",
-          "pattern": ":?query:",
+          "pattern": "",
           "target": [
-            "TargetMain"
+            "Customers"
           ]
         }
       ],
@@ -108,7 +116,14 @@
           "clearControlAggregation": false,
           "viewId": "Main",
           "viewName": "Main"
-        }
+        },
+        "Customers": {
+            "viewType": "XML",
+            "transition": "slide",
+            "clearControlAggregation": false,
+            "viewId": "Customer",
+            "viewName": "Customer"
+          }
       }
     },
     "rootView": {

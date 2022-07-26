@@ -1,0 +1,38 @@
+<core:FragmentDefinition id="changeCustomerGragment" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+        <f:SimpleForm id="SimpleFormChange354"
+            editable="true"
+            layout="ResponsiveGridLayout"
+            title="Address"
+            labelSpanXL="3"
+            labelSpanL="3"
+            labelSpanM="3"
+            labelSpanS="12"
+            adjustLabelSpan="false"
+            emptySpanXL="4"
+            emptySpanL="4"
+            emptySpanM="4"
+            emptySpanS="0"
+            columnsXL="1"
+            columnsL="1"
+            columnsM="1"
+            singleContainerFullSize="false" >
+            <f:content>
+                <Label id="app_label_customerid" text="{i18n>app.customer.id}" labelFor="app_text_customerid"/>
+                <Text id="app_text_customerid" text="{/customerID}" />
+                <Label id="app_label_first_name" text="{i18n>firstName}" labelFor="app_text_first_name"/>
+                <Text id="app_text_first_name" text="{/firstName}" />
+                <Label id="app_label_last_name" text="{i18n>lastName}" labelFor="app_text_last_name"/>
+                <Text id="app_text_last_name" text="{/lastName}" />
+                <Label id="app_label_title" text="{i18n>title}" labelFor="app_text_title"/>
+                <Text id="app_text_title" text="{/title}" />
+                <Label id="app_label_gender" text="{i18n>gender}" labelFor="app_select_gender"/>
+                <Text id="app_select_gender" text="{/gender}" />
+                <Label id="app_label_email" text="{i18n>email}" labelFor="app_text_email"/>
+                <Text id="app_text_email" text="{/email}" />
+                <Label id="app_label_phone" text="{i18n>phone}" labelFor="app_text_phone"/>
+                <Text id="app_text_phone" text="{/phone}" />
+                <Label id="app_label_website" text="{i18n>website}" labelFor="app_text_website"/>
+                <Text id="app_text_website" text="{/website}" />
+            </f:content>
+        </f:SimpleForm>
+</core:FragmentDefinition>
