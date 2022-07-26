@@ -24,6 +24,14 @@
           "localUri": "localService/metadata.xml",
           "odataVersion": "2.0"
         }
+      },
+      "ZHOUI5_CUSTOMER_SRV": {
+        "uri": "/sap/opu/odata/sap/ZHOUI5_CUSTOMER_SRV/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0",
+          "localUri": "localService/metadata.xml"
+        }
       }
     }
   },
@@ -69,19 +77,19 @@
           "bundleName": "sct.training.jhoui5.i18n.i18n"
         }
       },
-      "test": {
-        "dataSource": "mainService",
-        "preload": true,
-        "settings": {}
-      },
       "": {
-          "type": "sap.ui.model.json.JSONModel",
-          "uri": "data/customer.json"
+        "dataSource": "ZHOUI5_CUSTOMER_SRV",
+        "preload": true,
+        "settings": {
+          "defaultBindingMode": "TwoWay",
+          "defaultCountMode": "Inline",
+          "refreshAfterChange": false
+        }
       },
       "genderModel": {
         "type": "sap.ui.model.json.JSONModel",
         "uri": "data/genders.json"
-    }
+      }
     },
     "resources": {
       "css": [
@@ -118,12 +126,12 @@
           "viewName": "Main"
         },
         "Customers": {
-            "viewType": "XML",
-            "transition": "slide",
-            "clearControlAggregation": false,
-            "viewId": "Customer",
-            "viewName": "Customer"
-          }
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Customer",
+          "viewName": "Customer"
+        }
       }
     },
     "rootView": {
