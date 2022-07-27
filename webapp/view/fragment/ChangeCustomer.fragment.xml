@@ -18,27 +18,27 @@
             singleContainerFullSize="false" >
             <f:content>
                 <Label id="app_label_customerid" text="{i18n>app.customer.id}" labelFor="app_text_customerid"/>
-                <Input id="app_text_customerid" value="{/customerID}" />
+                <Input id="app_text_customerid" value="{CustomerId}" editable="false"/>
                 <Label id="app_label_first_name" text="{i18n>firstName}" labelFor="app_text_first_name"/>
-                <Input id="app_text_first_name" value="{/firstName}" />
+                <Input id="app_text_first_name" value="{Firstname}" />
                 <Label id="app_label_last_name" text="{i18n>lastName}" labelFor="app_text_last_name"/>
-                <Input id="app_text_last_name" value="{/lastName}" />
+                <Input id="app_text_last_name" value="{Lastname}" />
                 <Label id="app_label_title" text="{i18n>title}" labelFor="app_text_title"/>
-                <Input id="app_text_title" value="{/title}" />
+                <Input id="app_text_title" value="{AcademicTitle}" />
                 <Label id="app_label_gender" text="{i18n>gender}" labelFor="app_select_gender"/>
-                <Select id="app_select_gender" selectedKey="{/gender}" items="{genderModel>/genders}">
-                    <core:Item id="app_item_female" key="{genderModel>}" text="{path: 'genderModel>', formatter: '.genderFormatter'}" />
+                <Select id="app_select_gender" selectedKey="{Gender}" items="{genderModel>/genders}">
+                    <core:Item id="app_item_female" key="{genderModel>/key}" text="{= ${genderModel>/text} === 1 ? 'Male' : 'Female'}" />
                     <!-- <items>
                         <core:Item id="app_item_female" key="female" text="{i18n>female}"/>
                         <core:Item id="app_item_male" key="male" text="{i18n>male}"/>
                     </items> -->
                 </Select>
                 <Label id="app_label_email" text="{i18n>email}" labelFor="app_text_email"/>
-                <Input id="app_text_email" value="{/email}" />
+                <Input id="app_text_email" value="{Email}" />
                 <Label id="app_label_phone" text="{i18n>phone}" labelFor="app_text_phone"/>
-                <Input id="app_text_phone" value="{/phone}" />
+                <Input id="app_text_phone" value="{Phone}" />
                 <Label id="app_label_website" text="{i18n>website}" labelFor="app_text_website"/>
-                <Input id="app_text_website" value="{/website}" />
+                <Input id="app_text_website" value="{Website}" />
             </f:content>
         </f:SimpleForm>
 </core:FragmentDefinition>

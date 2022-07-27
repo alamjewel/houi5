@@ -18,21 +18,21 @@
             singleContainerFullSize="false" >
             <f:content>
                 <Label id="app_label_customerid" text="{i18n>app.customer.id}" labelFor="app_text_customerid"/>
-                <Text id="app_text_customerid" text="{/customerID}" />
+                <Text id="app_text_customerid" text="{CustomerId}" />
                 <Label id="app_label_first_name" text="{i18n>firstName}" labelFor="app_text_first_name"/>
-                <Text id="app_text_first_name" text="{/firstName}" />
+                <Text id="app_text_first_name" text="{Firstname}" />
                 <Label id="app_label_last_name" text="{i18n>lastName}" labelFor="app_text_last_name"/>
-                <Text id="app_text_last_name" text="{/lastName}" />
+                <Text id="app_text_last_name" text="{Lastname}" />
                 <Label id="app_label_title" text="{i18n>title}" labelFor="app_text_title"/>
-                <Text id="app_text_title" text="{/title}" />
+                <Text id="app_text_title" text="{AcademicTitle}" />
                 <Label id="app_label_gender" text="{i18n>gender}" labelFor="app_select_gender"/>
-                <Text id="app_select_gender" text="{/gender}" />
+                <Text id="app_select_gender" text="{path: 'Gender', formatter: '.formatter.genderFormatter'}" />
                 <Label id="app_label_email" text="{i18n>email}" labelFor="app_text_email"/>
-                <Text id="app_text_email" text="{/email}" />
+                <Text id="app_text_email" text="{Email}" />
                 <Label id="app_label_phone" text="{i18n>phone}" labelFor="app_text_phone"/>
-                <Text id="app_text_phone" text="{/phone}" />
+                <Text id="app_text_phone" text="{Phone}" />
                 <Label id="app_label_website" text="{i18n>website}" labelFor="app_text_website"/>
-                <Text id="app_text_website" text="{/website}" />
+                <Text id="app_text_website" text="{Website}" />
             </f:content>
         </f:SimpleForm>
 </core:FragmentDefinition>

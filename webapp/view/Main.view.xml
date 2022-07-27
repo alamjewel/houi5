@@ -4,6 +4,7 @@
     <Page id="page" title="{i18n>title}">
         <customHeader>
             <OverflowToolbar id="app_toolbar_header">
+                <Button id="backBTn" icon="sap-icon://nav-back" press="onNavBtnClick" />
                 <Title id="app_header_title" text="{i18n>headerTitle}"/>
                 <ToolbarSpacer id="app_header_toolbar_spacer" />
                 <Button id="customer_edit_btn" press="onEdit" text="{i18n>editBtnTitle}" icon="sap-icon://edit" type="Emphasized" visible="{= ${editModel>/editMode} === true ? false : true }"/>

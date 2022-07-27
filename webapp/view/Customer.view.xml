@@ -4,6 +4,13 @@
     <Page id="customerPage" title="{i18n>title}">
         <content>
             <Table id="customerList" items="{/CustomerSet}" noDataText="Sorry! There is no data, right now!" mode="Delete" delete="onDelete">
+                <headerToolbar>
+                    <OverflowToolbar id="table_overflow_toolbar">
+                        <Title id="table_overflow_toolbar_title" text="{i18n>title}" />
+                        <ToolbarSpacer id="table_overflow_toolbar_toolbar_spacer" />
+                        <Button id="addBTn" text="{i18n>addBtn}" press="onAddBtnClick" type="Accept" icon="sap-icon://add" />
+                    </OverflowToolbar>
+                </headerToolbar>
                 <columns>
                     <Column id="customerID">
                         <Text id="customerIdText" text="{i18n>app.customer.id}" />
@@ -34,13 +41,13 @@
                     </Column> -->
                 </columns>
                 <items>
-                    <ColumnListItem id="customerData">
+                    <ColumnListItem id="customerData" type="Navigation" press="onItemClick">
                         <cells>
                             <Text id="customerIdValue" text="{CustomerId}"/>
                             <Text id="customerFirstNameValue" text="{Firstname}"/>
                             <Text id="customerLastNameValue" text="{Lastname}"/>
                             <Text id="customerTitleValue" text="{AcademicTitle}"/>
-                            <Text id="customerGenderValue" text="{Gender}"/>
+                            <Text id="customerGenderValue" text="{path: 'Gender', formatter: '.formatter.genderFormatter'}"/>
                             <Text id="customerEmailValue" text="{Email}"/>
                             <Text id="customerPhoneValue" text="{Phone}"/>
                             <Text id="customerWebsiteValue" text="{Website}"/>

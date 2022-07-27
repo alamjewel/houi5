@@ -1,14 +1,16 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "sap/m/MessageBox"
+    "sap/m/MessageBox",
+    "sct/training/jhoui5/controller/formatter/JUI5Foramatter"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, MessageBox) {
+    function (Controller, MessageBox, JUI5Foramatter) {
         "use strict";
 
         return Controller.extend("sct.training.jhoui5.controller.Main", {
+            formatter: JUI5Foramatter,
             onInit: function () {
             },
             onDelete: function (oEvent) {
@@ -30,6 +32,17 @@ sap.ui.define([
                         }
                     }
                 })
+            },
+            onItemClick: function (oEvent) {
+                const sPath = oEvent.getSource().getBindingContext().getPath();
+                const oRouter = this.getOwnerComponent().getRouter();
+                oRouter.navTo("CustomerDetails", {
+                    path: sPath.split("/")[1]
+                })
+            },
+            onAddBtnClick:  function () {
+                const oRouter = this.getOwnerComponent().getRouter();
+                oRouter.navTo("CreateCustomer", true)
             }
         });
     });

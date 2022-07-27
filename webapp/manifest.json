@@ -32,7 +32,23 @@
           "odataVersion": "2.0",
           "localUri": "localService/metadata.xml"
         }
-      }
+      },
+      "ZHOUI5_CDS": {
+        "uri": "/sap/opu/odata/sap/ZHOUI5_CDS/",
+        "type": "OData",
+        "settings": {
+            "annotations": ["ZHOUI5_CDS_VAN", "annotation"],
+            "odataVersion": "2.0",
+            "localUri": "localService/metadata.xml"
+        }
+      },
+    "ZHOUI5_CDS_VAN": {
+        "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZHOUI5_CDS_VAN',Version='0001')/$value/",
+        "type": "ODataAnnotation",
+        "settings": {
+            "localUri": "localService/ZHOUI5_CDS_VAN.xml"
+        }
+    }
     }
   },
   "sap.ui": {
@@ -81,6 +97,17 @@
         "dataSource": "ZHOUI5_CUSTOMER_SRV",
         "preload": true,
         "settings": {
+            "defaultBindingMode": "TwoWay",
+            "defaultCountMode": "Inline",
+            "refreshAfterChange": true,
+            "useBatch": true,
+            "tokenHandling": true
+        }
+    },
+      "cdsModel": {
+        "dataSource": "ZHOUI5_CDS",
+        "preload": true,
+        "settings": {
           "defaultBindingMode": "TwoWay",
           "defaultCountMode": "Inline",
           "refreshAfterChange": false
@@ -115,10 +142,24 @@
           "target": [
             "Customers"
           ]
+        },
+        {
+          "name": "CustomerDetails",
+          "pattern": "/customer_details/{path}",
+          "target": [
+            "CustomerDetails"
+          ]
+        },
+        {
+          "name": "CreateCustomer",
+          "pattern": "createcustomer",
+          "target": [
+            "CustomerDetails"
+          ]
         }
       ],
       "targets": {
-        "TargetMain": {
+        "CustomerDetails": {
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,

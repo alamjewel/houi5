@@ -1,7 +1,7 @@
 {
-    "gendersOld": [
-        { "key": "F", "text": "Female" },
-        { "key": "M", "text": "Male" }
+    "genders": [
+        { "key": "0", "text": "Female" },
+        { "key": "1", "text": "Male" }
     ],
-    "genders": ["male", "female"]
+    "gendersOld": ["male", "female"]
 }
