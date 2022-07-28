@@ -3,13 +3,13 @@ sap.ui.define([
     "sap/m/MessageBox",
     "sap/ui/model/json/JSONModel",
     "sap/ui/core/Fragment",
-    "sap/ui/core/routing/History",
-    "sct/training/jhoui5/controller/formatter/JUI5Foramatter"
+    "sct/training/jhoui5/controller/formatter/JUI5Foramatter",
+    "sap/ui/core/Item"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (BaseController, MessageBox, JSONModel, Fragment, History, JUI5Foramatter) {
+    function (BaseController, MessageBox, JSONModel, Fragment, JUI5Foramatter, Item) {
         "use strict";
 
         return BaseController.extend("sct.training.jhoui5.controller.Main", {
@@ -122,6 +122,67 @@ sap.ui.define([
             _toogelEdit: function (bEditMode) {
                 this.oEditModel.setProperty("/editMode", bEditMode);
                 this._showCustomerFragment(bEditMode ? 'ChangeCustomer' : 'DisplayCustomer');
+            },
+            onOpenAttachments:  function () {
+                let oView = this.getView();
+
+                if (!this._pDialog) {
+                    this._pDialog = Fragment.load({
+                        id: oView.getId(),
+                        name: "sct.training.jhoui5.view.fragment.AttachmentDialog",
+                        controller: this
+                    }).then(function (oDialog) {
+                        oView.addDependent(oDialog);
+                        return oDialog;
+                    });
+                }
+
+                this._pDialog.then(function (oDialog) {
+                    let oUploadSet = this.getView().byId("attachments_uploadset");
+                    oUploadSet.setUploadUrl(this.getView().getModel().sServiceUrl + 
+                    this.getView().getElementBinding().getPath() + "/Documents");
+                    oDialog.open();
+                }.bind(this));
+            },
+            onAfterItemAdded: function(oEvent){
+                let oUploadSet = this.getView().byId("attachments_uploadset");
+                let oUploadSetItem = oEvent.getParameters().item;
+                let sFileName = oUploadSetItem.getFileName();
+            
+                oUploadSet.removeAllHeaderFields();
+            
+                let oHeader = new Item({
+                    key: "x-csrf-token",
+                    text: this.getView().getModel().getSecurityToken()
+                });
+                oUploadSet.addHeaderField(oHeader);
+            
+                oHeader = new Item({
+                    key: "slug",
+                    text: sFileName
+                });
+                oUploadSet.addHeaderField(oHeader);
+            },
+            formatUrl: function(sDocId){
+                let sPath = this.getView().getModel().createKey("/CustomerDocumentSet", {
+                    DocId: sDocId
+                });
+                return this.getView().getModel().sServiceUrl + sPath + "/$value";
+            },
+            onUploadCompleted: function(){
+                this.getView().getModel().refresh(true);
+            },
+            
+            onRemovePressed: function(oEvent){
+                oEvent.preventDefault();
+                let sPath = oEvent.getSource().getBindingContext().getPath();
+                this.getView().getModel().remove(sPath);
+            },
+            
+            onAttachmentsDialogClose: function(){
+                this._pDialog.then(function(oDialog){
+                    oDialog.close();
+                }.bind(this));
             }
         });
     });

@@ -15,6 +15,11 @@
         </content>
         <footer>
             <Bar id="myBar">
+                <contentLeft>
+                    <Button id="customer_button_attachments" text="{i18n>attachments}"
+                        visible="{= !${editModel>/editmode} }" icon="sap-icon://attachment"
+                        press=".onOpenAttachments"/>
+                </contentLeft>
                 <contentRight>
                     <Button id="saveBtn" text="{i18n>saveBtn}" press=".onSave" type="Accept" icon="sap-icon://save" visible="{editModel>/editMode}" />
                     <Button id="cancelBtn" text="{i18n>cancelBtn}" press=".onCancel" type="Reject" icon="sap-icon://cancel" visible="{editModel>/editMode}" />

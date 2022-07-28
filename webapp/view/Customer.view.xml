@@ -1,4 +1,4 @@
-<!-- <mvc:View controllerName="sct.training.jhoui5.controller.Customer"
+<mvc:View controllerName="sct.training.jhoui5.controller.Customer"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
     <Page id="customerPage" title="{i18n>title}">
@@ -55,9 +55,9 @@
             </Table>
         </content>
     </Page>
-</mvc:View> -->
+</mvc:View>
 
-<mvc:View
+<!-- <mvc:View
     controllerName="sct.training.jhoui5.controller.Customer"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:core="sap.ui.core"
@@ -78,4 +78,4 @@
                 enableAutoBinding="true" />
         </content>
     </Page>
-</mvc:View>
+</mvc:View> -->
