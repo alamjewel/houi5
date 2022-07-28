@@ -1,8 +1,9 @@
-<mvc:View controllerName="sct.training.jhoui5.controller.Customer"
+<!-- <mvc:View controllerName="sct.training.jhoui5.controller.Customer"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
     <Page id="customerPage" title="{i18n>title}">
         <content>
+        
             <Table id="customerList" items="{/CustomerSet}" noDataText="Sorry! There is no data, right now!" mode="Delete" delete="onDelete">
                 <headerToolbar>
                     <OverflowToolbar id="table_overflow_toolbar">
@@ -36,9 +37,6 @@
                     <Column id="customerWebsite" minScreenWidth="Tablet" demandPopin="true">
                         <Text id="customerWebsiteText" text="{i18n>Website}" />
                     </Column>
-                    <!-- <Column id="action">
-                        <Text id="actionCell" text="{i18n>deleteBtn}" />
-                    </Column> -->
                 </columns>
                 <items>
                     <ColumnListItem id="customerData" type="Navigation" press="onItemClick">
@@ -51,11 +49,33 @@
                             <Text id="customerEmailValue" text="{Email}"/>
                             <Text id="customerPhoneValue" text="{Phone}"/>
                             <Text id="customerWebsiteValue" text="{Website}"/>
-                            <!-- <Button press="onDelete" type="Reject" icon="sap-icon://delete" /> -->
                         </cells>
                     </ColumnListItem>
                 </items>
             </Table>
+        </content>
+    </Page>
+</mvc:View> -->
+
+<mvc:View
+    controllerName="sct.training.jhoui5.controller.Customer"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+    displayBlock="true"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <smartTable:SmartTable id="main_smarttable"
+                entitySet="ZHOUI5_CUSTOMERSET"
+                tableType="ResponsiveTable"
+                useExportToExcel="true"
+                useVariantManagement="false"
+                useTablePersonalisation="true"
+                header="{i18n>title}"
+                showRowCount="true"
+                enableAutoBinding="true" />
         </content>
     </Page>
 </mvc:View>

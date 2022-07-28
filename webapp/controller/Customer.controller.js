@@ -12,6 +12,8 @@ sap.ui.define([
         return Controller.extend("sct.training.jhoui5.controller.Main", {
             formatter: JUI5Foramatter,
             onInit: function () {
+                this.getView().setModel(this.getOwnerComponent().getModel('cdsModel'));
+                this.getView().byId("main_smarttable").rebindTable();
             },
             onDelete: function (oEvent) {
                 this._onDelete(oEvent.getParameters().listItem)
